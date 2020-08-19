@@ -18,3 +18,10 @@
 
 ## Executando um bot
 >No terminal execute: `python <nome-do-arquivo.py>`
+
+## Particularidades que precisam ser observadas
+* No parâmaetro `import Keys`, para que funcione corretamente, _Keys_ deve ser escrito com "K" maiúsculo
+* Se você vai capturar elementos que são únicos numa página, por ex.: `by_id` ou `by_name` o parâmetro deve ficar no singular `...find_element...`
+* Se você vai capturar elementos que pertencenm a grupos numa página, por ex.: `by_class` o parâmetro deve ficar no plural `...find_elements...`
+* Para que o Python reconheça a acentuação do Português Brasileiro, é necessário que seja inserido no início do arquivo `#coding: utf-8`
+

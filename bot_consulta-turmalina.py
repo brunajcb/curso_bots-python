@@ -9,7 +9,7 @@ print("Iniciando bot.. \n")
 driver = webdriver.Chrome('/Users/bruna/desktop/bots/chromedriver') 
 
 #Accessing and capturing data
-driver.get("http://turmalina.tce.pb.gov.br/avaliacao/<nome-do-muncipio>") #Trocar <nome-do-municipio> pelo nome do municipio como é definido na url do Turmalina TCE/pB
+driver.get("http://turmalina.tce.pb.gov.br/avaliacao/<nome-do-muncipio>") #Trocar <nome-do-municipio> pelo nome do municipio como é definido na url do Turmalina TCE/PB
 data = driver.find_elements_by_class_name("turmalina-data")
 pontuacao_obtida = driver.find_elements_by_class_name("turmalina-ranking")
 pontuacao_maxima = driver.find_elements_by_class_name("turmalina-ranking-max")
