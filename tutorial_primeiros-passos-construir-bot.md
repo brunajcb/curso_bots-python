@@ -15,3 +15,6 @@
 * Uma vez dentro da pasta _bin_, rodar o comando `source activate`, para ativar a _virtualenv_
 * Processo finalizado. A partir de agora já é possível iniciar o projeto do bot.
 **_OBS.:_** A pasta do projeto do bot não deve ser dentro da pasta da _virtualenv_, crie-a onde você preferir.
+
+## Executando um bot
+>No terminal execute: `python <nome-do-arquivo.py>`
