@@ -6,6 +6,7 @@
     O _pip_ é o gerenciador de pacotes do python, com ele é possível instalar qualquer biblioteca disponível da Python.
 * Instalar o virtualenv
     Através da virtualenv é possível isolar bibliotecas de projetos que estejam com versões do Python diferentes, evitando que cause conclitos e erros no sistema operacional
+
 **[Clique aqui](http://blog.abraseucodigo.com.br/virtualenv-pip-pra-que-servem.html) para mais detalhes sobre os itens acima, bem como o passo a passo para instalação de cada um deles**
 
 ## Criando a virtualenv
