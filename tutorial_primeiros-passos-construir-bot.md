@@ -25,3 +25,11 @@
 * Se você vai capturar elementos que pertencenm a grupos numa página, por ex.: `by_class` o parâmetro deve ficar no plural `...find_elements...`
 * Para que o Python reconheça a acentuação do Português Brasileiro, é necessário que seja inserido no início do arquivo `#coding: utf-8`
 
+## Trabalhando com planilhas
+* É necessário instalar a biblioteca _xlrd_: `pip install xlrd`
+* E no arquivo, preciso importa essa biblioteca: `impor xlrd`
+* `workbook = xlrd.open_workbook('<titulo-da-planilha>.xlsx')` - abre a planilha que é definida
+* `sheet = workbook.sheet_by_index(0)` - acessa a folha que é indicada a primeira (sheet1) 0, a segunda 1...
+* `print(sheet.cell_value(0,0))` - printa o valor de uma determinada célula, por isso preciso definir a posição dela na folha, linha e coluna: (0,0)
+* `for linha in range(0,10)` - para percorrer um intervalo de linhas, da coluna que já foi definida anteriormente. Para isso é necessário definir a primeira e a última linha do intervalo a ser percorrida, nesse exemplo: `(0,10)` irá percorrer da linha 1 até a 10
+* `print(sheet.cell_value(linha,0))` - vai printar a linha definida, na coluna definida: `(linha, coluna)`
