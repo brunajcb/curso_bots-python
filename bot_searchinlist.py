@@ -6,23 +6,34 @@ import xlrd
 
 print("Iniciando bot.. \n")
 
-#Lendo do excel
-pages = []
+#Reading excel
+municipios = []
 workbook = xlrd.open_workbook('pages.xlsx') 
 sheet = workbook.sheet_by_index(0)
 
-#Percorrendo as linhas
+#Get lines
 for linha in range(0,3):
-    pages.append(sheet.cell_value(linha,0))
-
+    municipios.append(sheet.cell_value(linha,0))
 
 #Getting Chrome control
 driver = webdriver.Chrome('/Users/bruna/desktop/bots/chromedriver') 
-driver.get("https://caruaru.pe.gov.br/portal-da-transparencia/")
+driver.get("http://turmalina.tce.pb.gov.br/") 
 
-for page in pages:
-    item = driver.find_elements_by_class_name()
-    page.click()
+for municipio in municipios:
+    pesquisa = driver.find_element_by_id("mat-input-0")
+    pesquisa.clear()
+    pesquisa.send_keys(municipio)
+    resultado = driver.find_elements_by_class_name("mat-option-text")
+    clique = resultado[0].click()
     time.sleep(2)
-    titulo = driver.find_element_by_tag_name("h2")
-    print (titulo.text)
+    data = driver.find_elements_by_class_name("turmalina-data")
+    pontuacao_obtida = driver.find_elements_by_class_name("turmalina-ranking")
+    pontuacao_maxima = driver.find_elements_by_class_name("turmalina-ranking-max")
+    time.sleep(2)
+    #Displaying results
+    print "A última avaliação de", municipio, "feita pelo Turmalina, foi em:", (data[0].text)
+    print "A pontuação obtida foi de:", (pontuacao_obtida[0].text), "/", (pontuacao_maxima[0].text)
+    restart = driver.find_elements_by_class_name("turmalina-app-name")
+    back = restart[0].click()
+    time.sleep(2)
+driver.close()
