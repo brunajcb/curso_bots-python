@@ -34,3 +34,8 @@
 * `print(sheet.cell_value(0,0))` - printa o valor de uma determinada célula, por isso preciso definir a posição dela na folha, linha e coluna: (0,0)
 * `for linha in range(0,10)` - para percorrer um intervalo de linhas, da coluna que já foi definida anteriormente. Para isso é necessário definir a primeira e a última linha do intervalo a ser percorrida, nesse exemplo: `(0,10)` irá percorrer da linha 1 até a 10
 * `print(sheet.cell_value(linha,0))` - vai printar a linha definida, na coluna definida: `(linha, coluna)`
+
+## Coletando os resultados num arquivo
+* Logo após iniciar o bot, inserir a variável `arq open("<nome-do-arquivo.txt>", "w")` onde o _w_ quer dizer _wirte_ pra dizer que será um arquivo em texto e o _<nome-do-arquivo.txt>_ será o nome do arquivo que será gerado com os resultados
+* E logo após onde foi inserida a sua variável com o texto dos resultados que você quer inserir no arquivo, inserir a variável: `arq.write(<nome-da-variavel-do-texto>)`
+* E no final de todo o código, antes do `driver.close()` inserir `arq.close()`

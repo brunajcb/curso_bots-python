@@ -23,6 +23,9 @@ Realiza login num determinado site - É necessário mudar o parâmetro `find`, c
 ## Bot Sigin com Captcha - O que é?
 Realiza login, com captcha, num determinado site  - É necessário mudar o parâmetro `find`, conforme o caso, para conseguir acessar os campos de login, senha e captcha.
 
+## Bot Searchinlist - O que é?
+Realiza consultas a partir de uma lista escrita num excel.
+
 
 
 

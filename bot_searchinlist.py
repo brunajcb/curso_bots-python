@@ -5,6 +5,7 @@ import time
 import xlrd
 
 print("Iniciando bot.. \n")
+arq = open("resultados.txt", "w")
 
 #Reading excel
 municipios = []
@@ -23,17 +24,19 @@ for municipio in municipios:
     pesquisa = driver.find_element_by_id("mat-input-0")
     pesquisa.clear()
     pesquisa.send_keys(municipio)
-    resultado = driver.find_elements_by_class_name("mat-option-text")
-    clique = resultado[0].click()
+    opcoesListadas = driver.find_elements_by_class_name("mat-option-text")
+    clique = opcoesListadas[0].click()
     time.sleep(2)
     data = driver.find_elements_by_class_name("turmalina-data")
     pontuacao_obtida = driver.find_elements_by_class_name("turmalina-ranking")
     pontuacao_maxima = driver.find_elements_by_class_name("turmalina-ranking-max")
     time.sleep(2)
     #Displaying results
-    print "A última avaliação de", municipio, "feita pelo Turmalina, foi em:", (data[0].text)
-    print "A pontuação obtida foi de:", (pontuacao_obtida[0].text), "/", (pontuacao_maxima[0].text)
+    texto =  "A última avaliação de", municipio, "feita pelo Turmalina, foi em:", (data[0].text), "\n", "A pontuação obtida foi de:", (pontuacao_obtida[0].text), "/", (pontuacao_maxima[0].text)
+    arq.write(texto)
     restart = driver.find_elements_by_class_name("turmalina-app-name")
     back = restart[0].click()
     time.sleep(2)
+
+arq.close()
 driver.close()
